@@ -236,7 +236,9 @@ output eDP1 pos 0 0
 bindswitch lid:on exec swaymsg output eDP-1 disable
 bindswitch lid:off exec swaymsg output eDP-1 enable
 bindsym $mod+F1 exec ~/.config/sway/startup.sh
+bindsym $mod+F2 exec swaynag -m "Snd device" -z "Built-in" "pactl set-default-sink 50" -z "External" "pactl set-default-sink 527"
 bindsym $mod+l exec swaylock -i ~/.config/sway/sonoma.jpg -c 000000 -e -k -l
+
 bindsym --no-repeat --release Super_L exec pkill $launcher || $launcher
 exec ~/.config/sway/startup.sh
 exec "darkman set dark"
