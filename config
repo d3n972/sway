@@ -1,47 +1,11 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
-
-### Variables
-#
-# Logo key. Use Mod1 for Alt.
 set $mod Mod4
-# Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
-
-# Your preferred terminal emulator
-# Recommends: foot
 set $term foot
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-# Recommends: rofi-wayland
 set $rofi_cmd rofi \
         -terminal '$term'
-# Shows a combined list of the applications with desktop files and
-# executables from PATH.
-# TODO: add window with the next release of rofi-wayland
 set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
-
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# Requires: desktop-backgrounds-compat, swaybg
-output * bg ~/.config/sway/sonoma.jpg fill
-
-
 bindsym $mod+Shift+c reload
-include "/usr/share/sway/config.d/*.conf"
 include "~/.config/sway/config.d/*.conf"
-include "~/.config/sway/displays.conf"
-include "~/.config/sway/windowrules.conf"
-include "~/.config/sway/startup.conf"
-include "~/.config/sway/shortcuts.conf"
-
-
-
-
+exec "~/.config/sway/startup.sh"
