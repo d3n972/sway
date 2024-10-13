@@ -8,4 +8,3 @@ set $rofi_cmd rofi \
 set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 bindsym $mod+Shift+c reload
 include "~/.config/sway/config.d/*.conf"
-exec "~/.config/sway/startup.sh"
