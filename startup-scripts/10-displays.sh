@@ -7,6 +7,7 @@
 
 isHome=$(swaymsg --raw -t get_outputs | jq ".[] | .model" | grep "VS228")
 if [ ! -z "$isHome" ]; then
+    echo "Home: $isHome"
     swaymsg output "eDP-1" resolution 1920x1080 pos 3840 0
     swaymsg output "DP-1" resolution 1920x1080 pos 0 0
     swaymsg output "HDMI-A-1" resolution 1920x1080 pos 1920 0
@@ -14,6 +15,6 @@ else
     swaymsg output "DP-1" disable
     swaymsg output "eDP-1" disable
     swaymsg output "eDP-1" enable
-    swaymsg output "HDMI-A-1" pos 1920 0
+    swaymsg output "HDMI-A-1" resolution 2560x1440 pos 1920 0
     swaymsg output "eDP-1" pos 0 0
 fi
